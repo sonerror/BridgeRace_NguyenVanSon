@@ -7,14 +7,11 @@ public class GetBrick : MonoBehaviour
     [SerializeField]private Transform _target;
     [SerializeField] private GameObject _brick;
         
-
     private Stack<GameObject> _stackBrick = new Stack<GameObject>();
-    private Vector3 _stack =new Vector3(0,0.5f,0);
+    private Vector3 _stack =new Vector3(0,0.25f,0);
 
     int _countBirck = 0;
     // Start is called before the first frame update
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Brick")
@@ -33,4 +30,17 @@ public class GetBrick : MonoBehaviour
         _countBirck++;
         obj.transform.SetParent(_target);
     }
+    private void RemoveBrick()
+    {
+        transform.position -= _stack;
+        Destroy(_stackBrick.Pop());
+    }
+    private void ClearBrick()
+    {
+        for(int i = 1; i < _countBirck; i++)
+        {
+            RemoveBrick();
+        }
+    }
+
 }

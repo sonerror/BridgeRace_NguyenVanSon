@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Brick
+  - Stair
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - _BRIDGE_LAYER
   - Water
   - UI
   - 
