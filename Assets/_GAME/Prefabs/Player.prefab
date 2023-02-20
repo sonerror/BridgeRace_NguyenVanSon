@@ -635,6 +635,7 @@ GameObject:
   - component: {fileID: 6915312380743385761}
   - component: {fileID: 6915312380743385762}
   - component: {fileID: 5842408270320698070}
+  - component: {fileID: 6191098760914096302}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -736,9 +737,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 387088157191369342}
-  _brick: {fileID: 156134147464861642, guid: 8a727646e22966249a2c748622f689d6, type: 3}
-  _colerPlayer: 0
-  _animationManager: {fileID: 0}
+  _brick: {fileID: 273419863708101582, guid: 3d4b4a8f5652a9045ab8bc955f4897ed, type: 3}
+  _colerPlayer: 2
+--- !u!136 &6191098760914096302
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996954298115347949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32380483
+  m_Height: 1.8171806
+  m_Direction: 1
+  m_Center: {x: 0.029202789, y: 0.8488717, z: 0}
 --- !u!1 &6787370264944940179
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,13 +34,11 @@ public class GetBrick : MonoBehaviour
     private void AddBrick()
     {
         GameObject obj = Instantiate(_brick, new Vector3(_target.position.x, _target.position.y - _countBirck * _stack.y, _target.position.z), transform.rotation);
-        //obj.GetComponent<Renderer>().material = ResourceManager._instance._color[_colerPlayer]._material;
         _stackBrick.Push(obj);
         _target.position += _stack;
         _countBirck++;
         obj.transform.SetParent(_target);
-        obj.GetComponent<Renderer>().material = ResourceManager._instance._color[2]._material;
-
+        obj.GetComponent<Renderer>().material = ResourceManager._instance._color[1]._material;
     }
     public void RemoveBrick()
     {
