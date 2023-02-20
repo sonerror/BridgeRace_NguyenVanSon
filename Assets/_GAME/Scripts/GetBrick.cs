@@ -6,7 +6,9 @@ public class GetBrick : MonoBehaviour
 {
     [SerializeField]private Transform _target;
     [SerializeField] private GameObject _brick;
-        
+    [SerializeField] private int _colerPlayer;
+    
+
     private Stack<GameObject> _stackBrick = new Stack<GameObject>();
     private Vector3 _stack =new Vector3(0,0.25f,0);
 
@@ -16,21 +18,31 @@ public class GetBrick : MonoBehaviour
     {
         if (other.tag == "Brick")
         {
-            
-            AddBrick();
-            Debug.Log(_countBirck);
-            Destroy(other.gameObject);
+            if (other.gameObject.GetComponent<CreateColor>()._number == _colerPlayer)
+            {
+                AddBrick();
+                Debug.Log(_countBirck);
+                Destroy(other.gameObject);
+            }
+        }
+        if(other.tag == "Victory")
+        {
+            ClearBrick();
+            //_animationManager.PlayVictory();
         }
     }
     private void AddBrick()
     {
         GameObject obj = Instantiate(_brick, new Vector3(_target.position.x, _target.position.y - _countBirck * _stack.y, _target.position.z), transform.rotation);
+        //obj.GetComponent<Renderer>().material = ResourceManager._instance._color[_colerPlayer]._material;
         _stackBrick.Push(obj);
         _target.position += _stack;
         _countBirck++;
         obj.transform.SetParent(_target);
+        obj.GetComponent<Renderer>().material = ResourceManager._instance._color[2]._material;
+
     }
-    private void RemoveBrick()
+    public void RemoveBrick()
     {
         transform.position -= _stack;
         Destroy(_stackBrick.Pop());
@@ -42,5 +54,4 @@ public class GetBrick : MonoBehaviour
             RemoveBrick();
         }
     }
-
 }

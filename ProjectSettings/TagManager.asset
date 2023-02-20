@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Brick
   - Stair
+  - Victory
+  - Step
   layers:
   - Default
   - TransparentFX

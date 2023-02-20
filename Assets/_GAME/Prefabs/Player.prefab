@@ -339,8 +339,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5875397, z: 0.51838607}
+  m_Center: {x: 0, y: 0.20622994, z: -0.51285064}
 --- !u!1 &2069334328983360992
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,14 +631,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6373339515726761815}
   - component: {fileID: 6915312380743385790}
-  - component: {fileID: 6915312380743385791}
   - component: {fileID: 6915312380743385760}
   - component: {fileID: 6915312380743385761}
   - component: {fileID: 6915312380743385762}
   - component: {fileID: 5842408270320698070}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -676,19 +675,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!65 &6915312380743385791
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5996954298115347949}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.71269906, y: 2.2023134, z: 0.48183823}
-  m_Center: {x: -0.011771798, y: 1.1080122, z: -0.06077957}
 --- !u!95 &6915312380743385760
 Animator:
   serializedVersion: 3
@@ -736,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10de19f3ffb1a943a59b95e5c448ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
+  _animator: {fileID: 6915312380743385760}
 --- !u!114 &5842408270320698070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,7 +736,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 387088157191369342}
-  _brick: {fileID: 7614878399612077409, guid: a672ecdd7f7ea9948abf4b14e2b4cd75, type: 3}
+  _brick: {fileID: 156134147464861642, guid: 8a727646e22966249a2c748622f689d6, type: 3}
+  _colerPlayer: 0
+  _animationManager: {fileID: 0}
 --- !u!1 &6787370264944940179
 GameObject:
   m_ObjectHideFlags: 0

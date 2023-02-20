@@ -20,6 +20,10 @@ public class AnimationManager : MonoBehaviour
     {
         ChangeAnim("Run");
     }
+    public void PlayVictory()
+    {
+        ChangeAnim("Victory");
+    }
 
     public void ChangeAnim(string animName)
     {

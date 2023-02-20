@@ -40,7 +40,7 @@ public class Moving : MonoBehaviour
             _animationManager.PlayIdle();
         }
         //_rigidbody.MovePosition(_rigidbody.position + _moveVetor);
-        _rigidbody.velocity = _moveVetor.normalized * _moveSpeed + _rigidbody.velocity.y * Vector3.up;
+        _rigidbody.velocity = _moveVetor.normalized * _moveSpeed  + _rigidbody.velocity.y * Vector3.up;
     }
 }
     /*private Vector3 PlayerMovenmentInput;
