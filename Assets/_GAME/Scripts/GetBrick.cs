@@ -8,11 +8,11 @@ public class GetBrick : MonoBehaviour
     [SerializeField] private GameObject _brick;
     [SerializeField] private int _colerPlayer;
     
-
-    private Stack<GameObject> _stackBrick = new Stack<GameObject>();
+    public Stack<GameObject> _stackBrick = new Stack<GameObject>();
     private Vector3 _stack =new Vector3(0,0.25f,0);
+    public List<GameObject> _listStack = new List<GameObject>();
 
-    int _countBirck = 0;
+    int _count = 0;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -21,33 +21,41 @@ public class GetBrick : MonoBehaviour
             if (other.gameObject.GetComponent<CreateColor>()._number == _colerPlayer)
             {
                 AddBrick();
-                Debug.Log(_countBirck);
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
+                _listStack.Add(other.gameObject);
+                other.gameObject.SetActive(false);
+                //Debug.Log(CountStack()+ "test count");
             }
         }
         if(other.tag == "Victory")
         {
-            ClearBrick();
+            RemoveBrick();
             //_animationManager.PlayVictory();
         }
     }
     private void AddBrick()
     {
-        GameObject obj = Instantiate(_brick, new Vector3(_target.position.x, _target.position.y - _countBirck * _stack.y, _target.position.z), transform.rotation);
+        GameObject obj = Instantiate(_brick, new Vector3(_target.position.x, _target.position.y - _count * _stack.y, _target.position.z), transform.rotation);
         _stackBrick.Push(obj);
         _target.position += _stack;
-        _countBirck++;
+        _count++;
         obj.transform.SetParent(_target);
         obj.GetComponent<Renderer>().material = ResourceManager._instance._color[1]._material;
+        //obj.SetActive(true);
     }
     public void RemoveBrick()
     {
-        transform.position -= _stack;
-        Destroy(_stackBrick.Pop());
+        _count--;
+        _target.position -= _stack;
+        _stackBrick.Pop();
+        Destroy(_target.GetChild(_count).gameObject);
+        _listStack[_listStack.Count - 1].SetActive(true);
+        _listStack.RemoveAt(_listStack.Count - 1);
+
     }
     private void ClearBrick()
     {
-        for(int i = 1; i < _countBirck; i++)
+        for(int i = 1; i < _count; i++)
         {
             RemoveBrick();
         }

@@ -8,6 +8,7 @@ TagManager:
   - Stair
   - Victory
   - Step
+  - StopMove
   layers:
   - Default
   - TransparentFX

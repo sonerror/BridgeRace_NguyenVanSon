@@ -422,7 +422,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 14a4c4194394fee4bada2bb4f1ada751, type: 2}
+  - {fileID: 2100000, guid: 8725625c9a07a77448e975fc5e3e24e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 6915312380743385762}
   - component: {fileID: 5842408270320698070}
   - component: {fileID: 6191098760914096302}
+  - component: {fileID: 6413674833745159882}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -739,6 +740,7 @@ MonoBehaviour:
   _target: {fileID: 387088157191369342}
   _brick: {fileID: 273419863708101582, guid: 3d4b4a8f5652a9045ab8bc955f4897ed, type: 3}
   _colerPlayer: 2
+  _listStack: []
 --- !u!136 &6191098760914096302
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -753,6 +755,22 @@ CapsuleCollider:
   m_Height: 1.8171806
   m_Direction: 1
   m_Center: {x: 0.029202789, y: 0.8488717, z: 0}
+--- !u!114 &6413674833745159882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996954298115347949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1836504f0da007d46a3d55a02d77d38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _step: {fileID: 5374142586228714087, guid: 98bbc2a172c15c643a46ac30ca22e265, type: 3}
+  _player: {fileID: 6373339515726761815}
+  _getBrick: {fileID: 0}
+  _moving: {fileID: 0}
 --- !u!1 &6787370264944940179
 GameObject:
   m_ObjectHideFlags: 0

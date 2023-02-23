@@ -7,7 +7,6 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] Animator _animator;
     private string _currentAnimName;
 
-
     private void Awake()
     {
         _animator = gameObject.GetComponent<Animator>();

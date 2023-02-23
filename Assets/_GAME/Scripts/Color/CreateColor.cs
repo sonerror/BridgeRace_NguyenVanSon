@@ -11,7 +11,7 @@ public class CreateColor : MonoBehaviour
     }
     protected virtual void Create()
     {
-        _number = Random.Range(1, 6);
+        _number = Random.Range(0, 6);
        // Debug.Log(_number);
         ResourceManager._instance.ChangeColor(_number, transform.gameObject);
     }
