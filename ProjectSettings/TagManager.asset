@@ -9,6 +9,8 @@ TagManager:
   - Victory
   - Step
   - StopMove
+  - Bot
+  - NextLevel
   layers:
   - Default
   - TransparentFX

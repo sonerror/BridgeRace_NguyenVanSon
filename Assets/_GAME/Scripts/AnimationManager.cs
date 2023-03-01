@@ -23,7 +23,14 @@ public class AnimationManager : MonoBehaviour
     {
         ChangeAnim("Victory");
     }
-
+    public void PlayEIdle()
+    {
+        ChangeAnim("EIdle");
+    }
+    public void EPlayRun()
+    {
+        ChangeAnim("ERun");
+    }
     public void ChangeAnim(string animName)
     {
         if (_currentAnimName != animName)

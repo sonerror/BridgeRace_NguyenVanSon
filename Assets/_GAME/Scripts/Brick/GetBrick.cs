@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ public class GetBrick : MonoBehaviour
 {
     [SerializeField]private Transform _target;
     [SerializeField] private GameObject _brick;
-    [SerializeField] private int _colerPlayer;
+    [SerializeField] private int _numberEnums;
     
     public Stack<GameObject> _stackBrick = new Stack<GameObject>();
     private Vector3 _stack =new Vector3(0,0.25f,0);
@@ -18,7 +18,7 @@ public class GetBrick : MonoBehaviour
     {
         if (other.tag == "Brick")
         {
-            if (other.gameObject.GetComponent<CreateColor>()._number == _colerPlayer)
+            if (other.gameObject.GetComponent<CreateColor>()._number == _numberEnums)
             {
                 AddBrick();
                 //Destroy(other.gameObject);
@@ -32,6 +32,7 @@ public class GetBrick : MonoBehaviour
             RemoveBrick();
             //_animationManager.PlayVictory();
         }
+
     }
     private void AddBrick()
     {
@@ -40,7 +41,9 @@ public class GetBrick : MonoBehaviour
         _target.position += _stack;
         _count++;
         obj.transform.SetParent(_target);
-        obj.GetComponent<Renderer>().material = ResourceManager._instance._color[1]._material;
+        obj.GetComponent<Renderer>().material = ResourceManager._instance._color[_numberEnums]._material;
+        // Lọc GameObject có màu đỏ
+
         //obj.SetActive(true);
     }
     public void RemoveBrick()
@@ -51,7 +54,6 @@ public class GetBrick : MonoBehaviour
         Destroy(_target.GetChild(_count).gameObject);
         _listStack[_listStack.Count - 1].SetActive(true);
         _listStack.RemoveAt(_listStack.Count - 1);
-
     }
     private void ClearBrick()
     {
