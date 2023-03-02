@@ -12,27 +12,27 @@ public class GetBrick : MonoBehaviour
     private Vector3 _stack =new Vector3(0,0.25f,0);
     public List<GameObject> _listStack = new List<GameObject>();
 
+    private string TAG_BRICK = "Brick";
+    private string TAG_VICTORY = "Victory";
+
     int _count = 0;
-    // Start is called before the first frame update
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Brick")
+        if (other.CompareTag(TAG_BRICK))
         {
             if (other.gameObject.GetComponent<CreateColor>()._number == _numberEnums)
             {
                 AddBrick();
-                //Destroy(other.gameObject);
                 _listStack.Add(other.gameObject);
                 other.gameObject.SetActive(false);
-                //Debug.Log(CountStack()+ "test count");
             }
         }
-        if(other.tag == "Victory")
+        if(other.CompareTag(TAG_VICTORY))
         {
             RemoveBrick();
-            //_animationManager.PlayVictory();
         }
-
     }
     private void AddBrick()
     {
@@ -42,9 +42,6 @@ public class GetBrick : MonoBehaviour
         _count++;
         obj.transform.SetParent(_target);
         obj.GetComponent<Renderer>().material = ResourceManager._instance._color[_numberEnums]._material;
-        // Lọc GameObject có màu đỏ
-
-        //obj.SetActive(true);
     }
     public void RemoveBrick()
     {
