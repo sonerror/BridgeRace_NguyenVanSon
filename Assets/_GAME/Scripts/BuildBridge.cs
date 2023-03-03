@@ -9,6 +9,7 @@ public class BuildBridge : MonoBehaviour
     [SerializeField] private GameObject _step;
     [SerializeField] private Transform _player;
     [SerializeField] private int _numberEnums;
+  //  [SerializeField] private CheckColorStep _colorStep;
 
 
     public GetBrick _getBrick;
@@ -36,7 +37,7 @@ public class BuildBridge : MonoBehaviour
  }*/
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(TAG_BRICK) && _getBrick._stackBrick.Count > 0)
+        if (other.CompareTag(TAG_BRICK) && _getBrick._stackBrick.Count > 0 )
         {
             ResourceManager._instance.ChangeColor(_numberEnums, other.gameObject);
             _getBrick.RemoveBrick();
