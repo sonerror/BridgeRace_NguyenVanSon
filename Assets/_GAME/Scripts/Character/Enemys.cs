@@ -19,12 +19,9 @@ public class Enemys : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _timer = _wanderTimer;
     }
-
-    // Update is called once per frame
     void Update()
     {
         _timer += Time.deltaTime;
-
         if (_timer >= _wanderTimer)
         {
             Vector3 newPos = RandomNavSphere(transform.position, _wanderRadius, -1);
@@ -34,17 +31,12 @@ public class Enemys : MonoBehaviour
             Debug.Log(newPos);
         }
     }
-
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
-
         randDirection += origin;
-
         NavMeshHit navHit;
-
         NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
-
         return navHit.position;
     }
 }

@@ -48,36 +48,3 @@ public class Moving : MonoBehaviour
         _rigidbody.velocity = Vector3.zero;
     }
 }
-    /*private Vector3 PlayerMovenmentInput;
-    private Vector3 PlayerMouseutput;
-    [SerializeField] private Transform PlayerCamera;
-    [SerializeField] Rigidbody rb;
-    [Space]
-    [SerializeField] private float speed;
-
-    // Update is called once per frame
-    void Update()
-    {
-       // PlayerMovenmentInput = new Vector3(Input.GetAxis);
-        Move(); 
-    }
-    void Move()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            rb.velocity = Vector3.right * speed;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            rb.velocity = -Vector3.right * speed;
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            rb.velocity = Vector3.forward * speed;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            rb.velocity = Vector3.back * speed;
-        }
-    }*/
-

@@ -631,11 +631,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6373339515726761815}
   - component: {fileID: 6915312380743385790}
+  - component: {fileID: 6191098760914096302}
   - component: {fileID: 6915312380743385760}
   - component: {fileID: 6915312380743385761}
   - component: {fileID: 6915312380743385762}
   - component: {fileID: 5842408270320698070}
-  - component: {fileID: 6191098760914096302}
   - component: {fileID: 6413674833745159882}
   m_Layer: 0
   m_Name: Player
@@ -677,6 +677,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!136 &6191098760914096302
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996954298115347949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32380483
+  m_Height: 1.8171806
+  m_Direction: 1
+  m_Center: {x: 0.029202789, y: 0.8488717, z: 0}
 --- !u!95 &6915312380743385760
 Animator:
   serializedVersion: 3
@@ -739,22 +753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 387088157191369342}
   _brick: {fileID: 273419863708101582, guid: 3d4b4a8f5652a9045ab8bc955f4897ed, type: 3}
-  _colerPlayer: 2
+  _numberEnums: 0
   _listStack: []
---- !u!136 &6191098760914096302
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5996954298115347949}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.32380483
-  m_Height: 1.8171806
-  m_Direction: 1
-  m_Center: {x: 0.029202789, y: 0.8488717, z: 0}
 --- !u!114 &6413674833745159882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,6 +769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _step: {fileID: 5374142586228714087, guid: 98bbc2a172c15c643a46ac30ca22e265, type: 3}
   _player: {fileID: 6373339515726761815}
+  _numberEnums: 0
+  _colorStep: {fileID: 0}
   _getBrick: {fileID: 0}
   _moving: {fileID: 0}
 --- !u!1 &6787370264944940179

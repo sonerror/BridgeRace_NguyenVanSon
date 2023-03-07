@@ -1,5 +1,5 @@
-public enum _nameColor 
- {
+public enum ColorType
+{
     Green = 1,
     Blue = 2,
     Yellow = 3,

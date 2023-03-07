@@ -8,6 +8,7 @@ public class ButtonPause : UICanvas
     public void MainMenuButton()
     {
         UIManager.Ins.OpenUI<UIPause>();
+        Time.timeScale = 0f;
         Close(0);
     }
 }

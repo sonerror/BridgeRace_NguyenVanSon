@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class UiStart : UICanvas
 {
-    // Start is called before the first frame update
+   // public GameObject myPrefab;
+   // public Transform spawnPoint;
+
     public void StartGame()
     {
         SceneManager.LoadScene("Level_1");
+      ///  GameObject spawnedObject = Instantiate(myPrefab, spawnPoint.position, spawnPoint.rotation);
+        gameObject.SetActive(false);
     }
-    public void QuitGame()
+     public void QuitGame()
     {
-
-
         #if UNITY_EDITOR
          UnityEditor.EditorApplication.isPlaying = false;
         #else

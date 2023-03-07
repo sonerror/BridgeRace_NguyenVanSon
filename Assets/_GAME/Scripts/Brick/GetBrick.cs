@@ -22,7 +22,7 @@ public class GetBrick : MonoBehaviour
     {
         if (other.CompareTag(TAG_BRICK))
         {
-            if (other.gameObject.GetComponent<CreateColor>()._number == _numberEnums)
+            if (other.gameObject.GetComponent<Brick>()._number == _numberEnums)
             {
                 AddBrick();
                 _listStack.Add(other.gameObject);
@@ -52,7 +52,7 @@ public class GetBrick : MonoBehaviour
         _listStack[_listStack.Count - 1].SetActive(true);
         _listStack.RemoveAt(_listStack.Count - 1);
     }
-    private void ClearBrick()
+    public void ClearBrick()
     {
         for(int i = 1; i < _count; i++)
         {
