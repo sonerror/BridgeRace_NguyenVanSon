@@ -28,7 +28,7 @@ public class Enemys : MonoBehaviour
             _agent.SetDestination(newPos);
             _animationManager.EPlayRun();
             _timer = 0;
-            Debug.Log(newPos);
+           // Debug.Log(newPos);
         }
     }
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

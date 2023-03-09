@@ -60,8 +60,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 937a4dc0411a6a542a37b5eee68f19fb, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8e4f05d99cacf4e9f6ba4930aad3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
   colorType: 4
-  _number: 0
+  _brick: {fileID: 0}
+  ren: {fileID: 8306961616625049530}
+  ResourceManager: {fileID: 0}
+  currentColor: 4

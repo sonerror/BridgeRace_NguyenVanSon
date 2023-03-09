@@ -1,4 +1,4 @@
-using System;
+﻿    using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -11,21 +11,68 @@ public class BuildBridge : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private int _numberEnums;
     [SerializeField] private ColorPlayer _colorPlayer;
-    [SerializeField] private Step _stepColor;
+    [SerializeField] private Transform _ponitRayCast;
 
     public GetBrick _getBrick;
     public Moving _moving;
 
-    private string TAG_BRICK = "Step";
+    private string TAG_STEP = "Step";
+    [SerializeField] private bool _checkBridge;
 
+
+    private void Update()
+    {
+        CheckStep();
+        if (_checkBridge == false)
+        {
+            _moving.stopMoving();
+        }
+        else
+        {
+            _moving.NotStop();
+        }
+
+    }
+    private bool CheckStep()//kiểm tra xem có được đi tiếp không
+    {
+        RaycastHit hit;
+        Debug.DrawRay(_ponitRayCast.position, Vector3.down * 50f, color: Color.red);
+        if (Physics.Raycast(_ponitRayCast.position,Vector3.down, out hit, 50f))
+        {
+            //print(hit.transform.name);
+            if (hit.collider.CompareTag(TAG_STEP))
+            {
+                Step step = hit.transform.GetComponent<Step>();
+                //Debug.Log(step.colorType + "1");
+                if (_getBrick._listStack.Count <= 0)
+                {
+                    if (step.colorType != _colorPlayer.colorType)
+                    {
+                        //.Log(step.colorType + "2");
+                        //Debug.Log("check color");
+                        return _checkBridge = false;
+                    }
+                }
+            }
+        }
+         return _checkBridge = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(TAG_BRICK) && _getBrick._stackBrick.Count > 0
-            && other.gameObject.GetComponent<Step>().colorType != this._colorPlayer.colorType)
+        if (other.CompareTag(TAG_STEP))
         {
-            Debug.Log(123);
-            ResourceManager._instance.ChangeColor(_numberEnums, other.gameObject);
-            _getBrick.RemoveBrick();
+            if (_getBrick._stackBrick.Count > 0)
+            {
+                Step step = other.GetComponent<Step>();
+                if (step != null) 
+                {
+                    if (step.colorType != _colorPlayer.colorType)
+                    {
+                        step.ChangeColor(_colorPlayer.colorType);
+                        _getBrick.RemoveBrick();
+                    }
+                }
+            }
         }
     }
 }

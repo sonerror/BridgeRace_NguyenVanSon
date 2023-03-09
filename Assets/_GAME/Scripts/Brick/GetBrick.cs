@@ -17,12 +17,12 @@ public class GetBrick : MonoBehaviour
 
     int _count = 0;
 
-
     private void OnTriggerEnter(Collider other)
     {
+        Brick brick = other.GetComponent<Brick>();
         if (other.CompareTag(TAG_BRICK))
         {
-            if (other.gameObject.GetComponent<Brick>()._number == _numberEnums)
+            if (brick._number == _numberEnums)
             {
                 AddBrick();
                 _listStack.Add(other.gameObject);

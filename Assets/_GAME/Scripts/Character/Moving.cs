@@ -24,7 +24,7 @@ public class Moving : MonoBehaviour
     {
         Move();
     }
-    private void Move()
+    public void Move()
     {
         _moveVetor = Vector3.zero;
         _moveVetor.x = _joystick.Horizontal * _moveSpeed * Time.deltaTime;
@@ -41,10 +41,16 @@ public class Moving : MonoBehaviour
         }
         //_rigidbody.MovePosition(_rigidbody.position + _moveVetor);
         _rigidbody.velocity = _moveVetor.normalized * _moveSpeed  + _rigidbody.velocity.y * Vector3.up;
-       
     }
-     void stopMoving()
+     public void stopMoving()
     {
-        _rigidbody.velocity = Vector3.zero;
+        _moveSpeed = 0.1f;
+    }
+    public void NotStop()
+    {
+        if(_rigidbody.velocity.y < 0)
+        {
+            _moveSpeed = 10f;
+        }
     }
 }

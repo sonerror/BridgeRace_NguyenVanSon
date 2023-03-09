@@ -14,7 +14,7 @@ public class ResourceManager : MonoBehaviour
     {
         _gameObject.GetComponent<Renderer>().material = _color[_number]._material;
     }
-    internal Material GetMat(ColorType colorType)
+    public Material GetMat(ColorType colorType)
     {
         return _color[(int)colorType]._material;
     }
