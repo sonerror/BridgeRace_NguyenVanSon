@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ColorPlayer : MonoBehaviour
 {
-    public ColorType colorType;
+    public ColorType _colorType;
 }

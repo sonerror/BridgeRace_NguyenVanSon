@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class UiStart : UICanvas
 {
-   // public GameObject myPrefab;
-   // public Transform spawnPoint;
-
     public void StartGame()
     {
         SceneManager.LoadScene("Level_1");

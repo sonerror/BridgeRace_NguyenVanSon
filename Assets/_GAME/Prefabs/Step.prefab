@@ -110,5 +110,4 @@ MonoBehaviour:
   colorType: 4
   _brick: {fileID: 0}
   ren: {fileID: 8306961616625049530}
-  ResourceManager: {fileID: 0}
   currentColor: 4

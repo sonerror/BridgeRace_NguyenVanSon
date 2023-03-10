@@ -11,6 +11,8 @@ TagManager:
   - StopMove
   - Bot
   - NextLevel
+  - Door
+  - CloseDoor
   layers:
   - Default
   - TransparentFX

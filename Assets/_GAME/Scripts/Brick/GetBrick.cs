@@ -54,7 +54,7 @@ public class GetBrick : MonoBehaviour
     }
     public void ClearBrick()
     {
-        for(int i = 1; i < _count; i++)
+        for(int i = 1; i <= _count; i++)
         {
             RemoveBrick();
         }

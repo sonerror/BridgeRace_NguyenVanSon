@@ -43,12 +43,12 @@ public class BuildBridge : MonoBehaviour
             if (hit.collider.CompareTag(TAG_STEP))
             {
                 Step step = hit.transform.GetComponent<Step>();
-                //Debug.Log(step.colorType + "1");
+                //Debug.Log(step._colorType + "1");
                 if (_getBrick._listStack.Count <= 0)
                 {
-                    if (step.colorType != _colorPlayer.colorType)
+                    if (step.colorType != _colorPlayer._colorType)
                     {
-                        //.Log(step.colorType + "2");
+                        //.Log(step._colorType + "2");
                         //Debug.Log("check color");
                         return _checkBridge = false;
                     }
@@ -66,9 +66,9 @@ public class BuildBridge : MonoBehaviour
                 Step step = other.GetComponent<Step>();
                 if (step != null) 
                 {
-                    if (step.colorType != _colorPlayer.colorType)
+                    if (step.colorType != _colorPlayer._colorType)
                     {
-                        step.ChangeColor(_colorPlayer.colorType);
+                        step.ChangeColor(_colorPlayer._colorType);
                         _getBrick.RemoveBrick();
                     }
                 }
