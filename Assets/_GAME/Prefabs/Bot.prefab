@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611371778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -744,9 +744,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afe42c92e4cda249a58fdff1aa4c70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationManager: {fileID: 1529275887}
-  wanderRadius: 1000
-  wanderTimer: 3
+  _animationManager: {fileID: 0}
+  _wanderRadius: 0
+  _wanderTimer: 0
 --- !u!114 &1529275886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1611371779}
   _brick: {fileID: 273419863708101582, guid: 3d4b4a8f5652a9045ab8bc955f4897ed, type: 3}
-  _colerPlayer: 1
+  _numberEnums: 0
   _listStack: []
 --- !u!114 &1529275887
 MonoBehaviour:
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10de19f3ffb1a943a59b95e5c448ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
+  _animator: {fileID: 3377701671528266588}
 --- !u!1 &5348324676352852316
 GameObject:
   m_ObjectHideFlags: 0
