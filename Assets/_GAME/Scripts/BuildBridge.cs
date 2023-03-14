@@ -39,17 +39,13 @@ public class BuildBridge : MonoBehaviour
         Debug.DrawRay(_ponitRayCast.position, Vector3.down * 50f, color: Color.red);
         if (Physics.Raycast(_ponitRayCast.position,Vector3.down, out hit, 50f))
         {
-            //print(hit.transform.name);
             if (hit.collider.CompareTag(TAG_STEP))
             {
                 Step step = hit.transform.GetComponent<Step>();
-                //Debug.Log(step._colorType + "1");
                 if (_getBrick._listStack.Count <= 0)
                 {
                     if (step.colorType != _colorPlayer._colorType)
                     {
-                        //.Log(step._colorType + "2");
-                        //Debug.Log("check color");
                         return _checkBridge = false;
                     }
                 }

@@ -12,12 +12,13 @@ public class DoorManage : MonoBehaviour
     {
         if(other.CompareTag(PLAYER) || other.CompareTag(BOT))
         {
-            Debug.Log("Door");
+            Debug.Log("Door False");
             _doorClose.SetActive(false);
 
         }
         else
         {
+            Debug.Log("Door True");
             _doorClose.SetActive(true);
         }
 
